@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+:root {
+  --green-lighter: hsl(148, 38%, 91%);
+  --green-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --grey-medium: hsl(186, 15%, 59%);
+  --grey-darker: hsl(187, 24%, 22%);
+}
+body{
+    display: grid;
+    place-items: center;
+    max-height: 100vh;
+    background-color: var(--green-lighter);
+    font-family: 'Karla', serif;
+    color: var(--grey-darker);
+}
+main {
+  background-color: white;
+  padding: 1.8em;
+  line-height: 2.0em;
+  border-radius: 1.2em;
+}
+h1{
+    margin-top: 0;
+    padding-top: 0;
+}
+form{
+    display: grid;
+}
+.asterisk{
+    color: var(--green-medium);
+}
+input[type="text"], input[type="email"]{
+    border: 1px solid var(--grey-medium);
+}
+input[type="text"]:focus, input[type="email"]:focus{
+    border: 2px solid var(--green-medium);
+    outline: none;
+}
+input[type="text"]:hover, input[type="email"]:hover{
+    border: 2px solid var(--green-medium);
+    outline: none;
+    cursor: pointer;
+}
+input[type=text], input[type=email]{
+    border-radius: 0.4em;
+    height: 2em;
+}
+fieldset{
+    border: 0;
+}
+legend{
+    margin-left: -0.9em;
+}
+.radio-options-container{
+    display: grid;
+    margin-left: -0.9em;
+    row-gap: 1.2em;
+}
+.radio-option {
+    width: 100%;
+    border: 1px solid var(--grey-medium); 
+    border-radius: 5px; 
+  }
+  .radio-option:focus{
+    border: 2px solid var(--green-medium);
+  }
+  input[type="radio"]:hover,
+  label[for=general]:hover,
+  label[for=support]:hover,
+  .radio-option:hover{
+    cursor: pointer;
+  }
+  .radio-option:has(input[type="radio"]:checked){
+    background-color: var(--green-lighter);
+    border: 2px solid var(--green-medium);
+  }
+  input[type="radio"] {
+    accent-color: var(--green-medium); 
+  }
+  input[type="radio"]:focus {
+    outline: 2px solid var(--green-medium); 
+  }
+#message{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid  var(--grey-medium);
+    border-radius: 0.4em;
+}
+#message:focus{
+    border: 2px solid var(--green-medium);
+    outline: none;
+}
+#message:hover{
+    border: 2px solid var(--green-medium);
+    outline: none;
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    accent-color: var(--green-medium); 
+  }
+input[type="checkbox"]:focus {
+    outline: 2px solid var(--green-medium); 
+  }
+
+
+  span[aria-live="polite"] {
+    color: var(--red);
+  }
+  #submit-btn{
+    background-color: var(--green-medium);
+    border: none;
+    color: var(--white);
+    border-radius: 0.4em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  #submit-btn:hover{
+    background-color: var(--grey-darker);
+    cursor: pointer;
+  }
+  #submit-btn:focus{
+    outline: 2px solid var(--grey-darker);   
+  }
+.success-message-container {
+  display: none;
+  background-color: var(--grey-darker);
+  padding: 0.8em;
+  color: var(--white);
+  border-radius: 1.2em;
+  grid-template-columns: 2em 1fr;
+  max-width: 70vw;
+}
+.success-message-container img{
+  place-self: center;
+  margin-bottom: 0.5em;
+}
+.success-message-container p{
+  grid-column: 1 / 3;
+  margin-top: 0;
+}
+.success-message-container span{
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+@media screen and (min-width: 680px){
+  form{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.4em;
+    width: 40vw;
+  }
+  #first-name{
+    grid-row: 2 /3;
+  }
+  label[for=last-name]{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  #last-name{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+  input[type="email"]{
+    grid-row: 5 / 6;
+    grid-column: 1 / 3;
+  }
+  span[aria-live="polite"]:nth-of-type(3){
+    grid-column: 1 / 2;
+  }
+  span[aria-live="polite"]:nth-of-type(4){
+    grid-column: 1 / 3;
+  }
+  fieldset{
+    grid-column: 1 / 3;
+    width: 95%;
+  }
+  .radio-options-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.4em;
+  }
+  .radio-option{
+    width: 100%;
+  }
+  label[for=message]{
+    grid-column: 1 / 2;
+  }
+  #message{
+    grid-column: 1 / 3;
+    aspect-ratio: 4 / 1;
+  }
+  .consent-container{
+    grid-column: 1 / 3;
+  }
+  #submit-btn{
+    grid-column: 1 / 3;
+  }
+}

@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   function showSuccessMessage() {
-    if (!textFieldsInvalid || !checkbox.checked || checkCount > 0){
+    if (textFieldsInvalid || !checkbox.checked || checkCount === 0){
       return;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });

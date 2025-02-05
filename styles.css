@@ -10,12 +10,13 @@
 body{
     display: grid;
     place-items: center;
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: var(--green-lighter);
     font-family: 'Karla', serif;
     color: var(--grey-darker);
 }
 main {
+
   background-color: white;
   padding: 1.8em;
   line-height: 2.0em;
